@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { TWITTER_USER_ID } from "../env";
 
-export default function TweetBox({ client }) {
+export default function TweetBox({ client_name }) {
   const MAX_LIMIT_CHARACTERS = 140;
 
   const [charNum, setCharNum] = useState(0);
@@ -8,8 +9,13 @@ export default function TweetBox({ client }) {
   return (
     <div className="tweet-box">
       <div className="container">
-        <p className="client">{client}</p>
-        <form onSubmit={() => console.log("submit!")}>
+        <p className="client">{client_name}</p>
+        <form
+          onSubmit={() => {
+            console.log("submit!");
+            console.log(TWITTER_USER_ID);
+          }}
+        >
           <label>
             <input
               type="text"
@@ -29,6 +35,13 @@ export default function TweetBox({ client }) {
             <p className="char-count warn">{charNum}文字</p>
           )}
         </form>
+        <button
+          onClick={() => {
+            console.log("done!");
+          }}
+        >
+          dummy button
+        </button>
       </div>
     </div>
   );
