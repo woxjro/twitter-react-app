@@ -17,6 +17,7 @@
   border: solid white;
   border-width: thin;
   min-height: 30vh;
+  min-width: 25vw;
 }
 
 .tweet-box .container {
@@ -31,4 +32,14 @@
 
 .tweet-box .tweet-input {
   height: 100;
+}
+
+.tweet-box input {
+  height: 50px;
+}
+.tweet-box .char-count {
+  font-size: 10pt;
+}
+.tweet-box .warn {
+  color: red;
 }
