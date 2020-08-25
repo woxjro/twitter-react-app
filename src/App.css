@@ -43,3 +43,9 @@
 .tweet-box .warn {
   color: red;
 }
+.tweet-box .tweet-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
