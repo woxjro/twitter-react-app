@@ -15,7 +15,7 @@
 
 .tweet-box {
   border: solid white;
-  border-width: thin;
+  border-width: 1pt;
   min-height: 30vh;
   min-width: 25vw;
 }
@@ -28,6 +28,7 @@
 
 .tweet-box .client {
   border: solid white;
+  border-width: 1pt;
 }
 
 .tweet-box .tweet-input {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TWITTER_USER_ID } from "../env";
 import axios from "axios";
 import FormData from "form-data";
-export default function TweetBox({ client_name }) {
+export default function TweetBox({ client, id }) {
   const MAX_LIMIT_CHARACTERS = 140;
 
   const [charNum, setCharNum] = useState(0);
@@ -11,15 +11,13 @@ export default function TweetBox({ client_name }) {
   return (
     <div className="tweet-box">
       <div className="container">
-        <p className="client">{client_name}</p>
+        <p className="client">{client.user_id}</p>
         <div>
           <textarea
             value={tweet}
             onChange={(event) => {
               setTweet(event.target.value);
               setCharNum(event.target.value.length);
-              console.log(tweet);
-              console.log(charNum);
             }}
           ></textarea>
           <div className="tweet-detail">
@@ -30,7 +28,7 @@ export default function TweetBox({ client_name }) {
             )}
             <button
               onClick={async () => {
-                await axios.post("http://localhost:8000/api/post", {
+                await axios.post("http://localhost:8000/api/post/" + id, {
                   date: new Date(),
                   tweet: tweet,
                 });
